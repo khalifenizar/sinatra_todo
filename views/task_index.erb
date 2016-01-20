@@ -1,0 +1,17 @@
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <p><%= task.content %></p>
+
+      <a href="/complete_task/<%= task.id %>">
+        Complete
+      </a>
+
+      <form action="/delete_task" method="post">
+        <button type="submit" name="id" value="<%= task.id %>">
+          Delete
+        </button>
+      </form>
+    </li>
+  <% end %>
+</ul>
